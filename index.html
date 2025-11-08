@@ -19,6 +19,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      scroll-behavior: smooth;
+      animation:slidein;
+      animation-duration: 1s
     }
 
     header {
@@ -135,6 +138,8 @@
       max-width: 800px;
       padding: 20px;
       text-align: center;
+      animation:slidein;
+      animation-duration: 1s;
     }
 
     .active {
@@ -218,7 +223,16 @@
       }
     }
 
-    
+    @keyframes slidein {
+  from {
+    margin-bottom: 10%;
+  }
+
+  to {
+    margin-bottom: 0%;
+  }
+}
+
     
   </style>
 </head>
@@ -226,7 +240,7 @@
 <body>
 
   <header>
-    <h1>KM'<s></s> 💖</h1>
+    <h1>KM's 💖</h1>
     <p id="desde">Desde 17 de janeiro de 2024</p>
     <p id="contador"></p>
   </header>
@@ -242,7 +256,10 @@
     <button onclick="showSection('nossasfotos')">Nossas fotos</button>
   </nav>
 </div>
+<div id="instruction" class="section active">
+  <p>Clique em algum dos tópicos acima!</p>
 
+</div>
 <div class="spotify-player active">
     <img src="https://upload.wikimedia.org/wikipedia/pt/e/e8/Capa_de_Eu%2C_Voc%C3%AA%2C_o_Mar_e_Ela.jpg"
       alt="Capa da música">
@@ -289,10 +306,8 @@
  
 
   <div class="botoes-amor">
-    <button>Te amo com todo meu coração ❤️</button>
-    <button>Você é meu sonho real ✨</button>
-    <button>Contigo é sempre primavera 🌸</button>
-    <button>Te escolheria mil vezes 💍</button>
+    <button>KM's pra sempre ❤️</button>
+    
   </div>
 
   <script src="./js/index.js">
