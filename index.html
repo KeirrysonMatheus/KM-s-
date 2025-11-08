@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KM's 💖</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fffaf5;
+      color: #5a4e4d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #f8e8e8;
+      color: #b47b84;
+      padding: 30px 20px 10px 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    #desde {
+      font-size: 1.1em;
+      margin-top: 5px;
+      font-style: italic;
+      color: #a35e6a;
+    }
+
+    #contador {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #cc7f91;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fbeaea;
+      padding: 10px;
+      width: 100%;
+    }
+
+    nav button {
+      background: #f4cdd4;
+      border: none;
+      margin: 6px;
+      padding: 10px 18px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 12px;
+      color: #663344;
+      font-family: 'Quicksand', sans-serif;
+      transition: background 2.0s;
+    }
+
+    nav button:hover {
+      background: #f7dbe1;
+    }
+
+    .spotify-player {
+      display: none;
+      align-items: center;
+      background-color: #1db954;
+      color: white;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      font-family: 'Quicksand', sans-serif;
+      width: 100%;
+    }
+
+    .spotify-player img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+
+    .player-info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .track {
+      font-weight: bold;
+      margin: 0;
+      font-size: 1.1em;
+    }
+
+    .artist {
+      font-size: 0.9em;
+      margin: 2px 0 10px 0;
+    }
+
+    .play-button {
+      background-color: white;
+      color: #1db954;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .play-button:hover {
+      background-color: #1ed760;
+      color: white;
+    }
+
+    .section {
+      display: none;
+      max-width: 800px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5em;
+      color: #b26e77;
+    }
+
+    .fotos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .fotos img {
+      width: 220px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .botoes-amor {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .botoes-amor button {
+      background: #ecc9c7;
+      color: #5a4e4d;
+      border: none;
+      margin: 8px;
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1em;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .botoes-amor button:hover {
+      background: #f3dede;
+      transform: scale(1.05);
+    }
+
+    audio {
+      display: block;
+      accent-color: #90EE90;
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 20px;
+    }
+
+    audio::-webkit-media-controls {
+      background-color: #90EE90;
+      border-radius: 20px;
+    }
+
+    audio::-webkit-media-controls-panel {
+      background-color:#90EE90;
+    }
+
+    @media (max-width: 600px) {
+      .fotos img {
+        width: 90%;
+      }
+
+      .spotify-player {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+      }
+
+      .spotify-player img {
+        margin-bottom: 15px;
+      }
+    }
+
+    
+    
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>KM'<s></s> 💖</h1>
+    <p id="desde">Desde 17 de janeiro de 2024</p>
+    <p id="contador"></p>
+  </header>
+
+  
+
+
+  <div style="padding-top: 1rem;">
+    <nav style="border-radius: 30px">
+    <button onclick="showSection('historia')">Nossa História</button>
+    <button onclick="showSection('conhecemos')">Como Nos Conhecemos</button>
+    <button onclick="showSection('porqueamo')">Porque Eu Te Amo</button>
+    <button onclick="showSection('nossasfotos')">Nossas fotos</button>
+  </nav>
+</div>
+
+<div class="spotify-player active">
+    <img src="https://upload.wikimedia.org/wikipedia/pt/e/e8/Capa_de_Eu%2C_Voc%C3%AA%2C_o_Mar_e_Ela.jpg"
+      alt="Capa da música">
+    <div class="player-info">
+      <p class="track">I Wanna Be Yours</p>
+      <p class="artist">Artic Monkeys</p>
+      <audio controls>
+        <source src="./audio/Arctic Monkeys - I Wanna Be Yours.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+    </div>
+  </div>
+  <div id="historia" class="section">
+    <h2>Nossa História</h2>
+    <p> Meu amor, nossa história até aqui foi tão incrível! Mudamos tanto, emadurecemos tanto juntos, foram tantos momentos que já posso dizer que tu já faz parte de mim, como um marco que indica o antes e depois. Admiro tanto nós porque mesmo rodeados de casais infiéis, nós seguimos em frente sem se corromper! E além disso, eu acredito que a nossa história de amor inspira muitos dos que estão a nossa volta, como se as pessoas se espelhassem em nós e desejassem ter relacionamentos como o nosso, que incrível! Com apenas 2 anos já temos tanto o que contar, e creio que 2 anos não é 1% do que vamos viver juntos, porque eu desejo ter uma vida inteira do teu lado 💖 </p>
+  </div>
+
+  <div id="conhecemos" class="section">
+    <h2>Como Nos Conhecemos</h2>
+    <p>As mãos... <br>
+      Foi tão improvável. Era o dia que tu havia voltado a igreja, e no primeiro culto que foi, aquele momento inesquecível aconteceu. Tu podia ter sentado em qualquer lugar, eram tantos bancos, e ao invés de sentar junto da tua mãe, tu veio logo do meu lado, a partir daí tudo mudou. O que era pra ser apenas um ciúmes para a Manu, virou o início dos KM's! Quando o pregador pediu para pegar a mão do irmão do lado, no momento que peguei tua mão senti tanta coisa, uma sensação tão boa, leve, que não sei como explicar, mas apenas sabia que não era normal. Quando entrei no carro para ir embora, sai falando pra todo mundo que estava casado, mesmo sem saber teu nome e se tu havia sentido o mesmo, eu tinha acabado de me apaixonar profundamente por ti. Depois disso, comecei a pesquisar sobre ti em tudo que era lugar, até que descobri que tu estudava na mesmoa escola que eu, e eu não fazia ideia! Desde então, sempre que te via na escola, fazia qualquer coisa pra tentar chamar tua atenção, lembro até hoje de um dia que tu tava sentada naqueles lugares que ficam na frente das salas e do lado da escada, e eu estava de frescura com o Rodrigo, fiz aquilo só com um intuito: chamar a tua atenção e tentar ser notado por ti. Não sabia como fazer tu se apaixonar por mim e não fazia ideia do que passava na tua cabeça, só sabia que estava apaixonado. Depois de um tempo, mandei a primeira mensagem, na qual era uma pergunta boba só pra puxar assunto. Fiquei com vergonha e apaguei, mas graças a Deus tu viu e respondeu, e ai foi onde conversamos pela primeira vez! Foi mágico poder conversar contigo, me senti tão bem. <br> Depois de um tempo, decidi me declarar pra ti, mas como tu sabe, não rolou kkkk. Aquilo me fez desabar, porque a menina que eu tanto queria, parecia que não gostava de mim, então, decidi parar um pouco de falar contigo, que foi o momento que aquela pessoa entrou na minha vida, não foi falar sobre. Mas durante aquele relacionamento que estive com aquela pessoa, eu sabia sempre que te via, que eu não estava com a pessoa certa, faltava algo. Até que aquilo acabou, e então, comecei a falar contigo novamente, mas dessa vez, deu certo! Depois de tanta insistência, eu havia te conquistado! Fico tão feliz por não ter desistido de ti, porque senão, não estaríamos aqui hoje.
+    </p>
+  </div>
+
+  <div id="porqueamo" class="section">
+    <h2>Porque Eu Te Amo</h2>
+    <p>Meu amor, eu te amo tanto, mas tanto que não cabe no meu coração todo esse amor, cada atitude tua, cada palavra, cada sorriso, cada palavra me faz perceber o quanto tu é especial pra mim.
+    Eu te amo tanto, que já não me imagino sem ti no futuro, pra mim, não faz sentido ter uma vida espetacular sem ti do meu lado. Tu é a razão do meu sorriso diário, a pessoa que mais me faz feliz nesse mundo! E esses, e muitos outros motivos, me fazem cada dia ter a certeza que tu é o amor da minha vida ❤️
+    </p>
+  </div>
+
+  <div id="nossasfotos" class="section">
+    <h2>Nossas Fotos</h2>
+    <div class="fotos">
+      <img src="./img/foto1.png" alt="Foto nossa 1">
+      <img src="./img/foto2.png" alt="Foto nossa 2">
+      <img src="./img/foto3.png" alt="Foto nossa 3">
+      <img src="./img/foto4.png" alt="Foto nossa 4">
+      <img src="./img/foto5.png" alt="Foto nossa 5">
+      <img src="./img/foto6.png" alt="Foto nossa 6">
+
+    </div>
+  </div>
+ 
+
+  <div class="botoes-amor">
+    <button>Te amo com todo meu coração ❤️</button>
+    <button>Você é meu sonho real ✨</button>
+    <button>Contigo é sempre primavera 🌸</button>
+    <button>Te escolheria mil vezes 💍</button>
+  </div>
+
+  <script src="./js/index.js">
+    
+  </script>
+</body>
+
+</html>
