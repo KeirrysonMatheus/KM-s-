@@ -216,21 +216,101 @@ audio::-webkit-media-controls-enclosure {
       transform: scale(1.05);
     }
 
-    @media (max-width: 600px) {
-      .fotos img {
-        width: 90%;
-      }
+    /* ===== RESPONSIVIDADE ===== */
 
-      .spotify-player {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 90%;
-      }
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+  body {
+    padding: 0 10px;
+  }
 
-      .spotify-player img {
-        margin-bottom: 15px;
-      }
-    }
+  header h1 {
+    font-size: 2em;
+  }
+
+  header #desde {
+    font-size: 1em;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .spotify-player {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .spotify-player img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .player-info {
+    text-align: center;
+    width: 100%;
+  }
+
+  .section {
+    padding: 15px 20px;
+    margin: 15px 0;
+  }
+
+  .fotos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fotos img {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .botoes-amor button {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 12px 0;
+  }
+}
+
+/* Telas médias (tablets) */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2.4em;
+  }
+
+  .spotify-player {
+    max-width: 350px;
+  }
+
+  .fotos img {
+    width: 45%;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1200px) {
+  .section {
+    max-width: 900px;
+  }
+
+  .spotify-player {
+    max-width: 500px;
+  }
+
+  .fotos img {
+    width: 200px;
+  }
+}
+
+    
   </style>
 </head>
 
