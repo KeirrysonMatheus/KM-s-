@@ -31,6 +31,8 @@
 
 /* FADE-IN DO MAIN CONTENT */
 .main-content {
+  position:relative;
+  overflow:hidden;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -362,4 +364,22 @@ audio::-webkit-media-controls-enclosure {
   text-align: center;
 }
 
-    
+  .main-content .heart {
+    position: absolute;
+  top: -20px;
+  animation: fall linear forwards;
+  pointer-events: none;
+  z-index: 50;
+}
+
+
+@keyframes fall {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
