@@ -1,3 +1,17 @@
+  function showPage() {
+  const clickme = document.querySelector('.clickme');
+  const main = document.querySelector('.main-content');
+
+  // Começa a animação de desaparecer
+  clickme.classList.add('hide');
+
+  // Espera a animação terminar para mostrar o conteúdo
+  setTimeout(() => {
+    clickme.style.display = "none";
+    main.classList.add('show');
+  }, 800); // tempo igual ao do transition
+}
+
     function showSection(id) {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => section.classList.remove('active'));
@@ -15,8 +29,17 @@
       const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
 
       document.getElementById('contador').textContent =
-        `Estamos juntos há ${dias} dias, ${horas} horas e ${minutos} minutos 💕`;
+        `Juntos há ${dias} dias, ${horas} horas e ${minutos} minutos 💕`;
     }
 
     setInterval(atualizaContador, 1000);
     atualizaContador();
+
+
+
+
+
+
+
+
+
