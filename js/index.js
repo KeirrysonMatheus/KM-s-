@@ -1,16 +1,46 @@
+  function createHeart() {
+  const main = document.querySelector(".main-content");
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+
+  // posição horizontal aleatória dentro da main-content
+  heart.style.left = Math.random() * 100 + "%";
+
+  // tamanho aleatório
+  heart.style.fontSize = (Math.random() * 24 + 16) + "px";
+
+  // duração da animação
+  const duration = Math.random() * 3 + 3;
+  heart.style.animationDuration = duration + "s";
+
+  main.appendChild(heart);
+
+  // remover após a animação
+  setTimeout(() => heart.remove(), duration * 1000);
+}
+
+// ativa os corações somente DEPOIS que a main-content aparecer
+function startHearts() {
+  setInterval(createHeart, 300);
+}
+  
   function showPage() {
   const clickme = document.querySelector('.clickme');
   const main = document.querySelector('.main-content');
 
-  // Começa a animação de desaparecer
   clickme.classList.add('hide');
 
-  // Espera a animação terminar para mostrar o conteúdo
   setTimeout(() => {
     clickme.style.display = "none";
     main.classList.add('show');
-  }, 800); // tempo igual ao do transition
+
+    // iniciar corações só depois que a main aparecer
+    startHearts();
+
+  }, 800);
 }
+
 
     function showSection(id) {
       const sections = document.querySelectorAll('.section');
