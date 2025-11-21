@@ -5,7 +5,8 @@
   heart.innerHTML = "💖";
 
   // posição horizontal aleatória dentro da main-content
-  heart.style.left = Math.random() * 100 + "%";
+  heart.style.left = Math.random() * 90  + "%";
+
 
   // tamanho aleatório
   heart.style.fontSize = (Math.random() * 24 + 16) + "px";
