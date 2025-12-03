@@ -40,6 +40,8 @@ function startHearts() {
     startHearts();
 
   }, 800);
+
+document.querySelector("#music").play();
 }
 
 
