@@ -287,3 +287,57 @@ audio {
 #nossasfotos img {
   max-height: 400px;
 }
+
+/* ===== AUDIO — ROMANTIC STYLE ===== */
+audio {
+  padding: 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 63, 94, 0.35),
+    rgba(232, 121, 249, 0.35)
+  );
+  padding: 4px;
+  box-shadow:
+    0 4px 15px rgba(244, 63, 94, 0.35),
+    inset 0 0 10px rgba(255,255,255,0.15);
+}
+
+/* Chrome / Edge / Safari */
+audio::-webkit-media-controls-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(244, 63, 94, 0.6),
+    rgba(232, 121, 249, 0.6)
+  );
+  border-radius: 10px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+  filter: brightness(1.2);
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Progress bar */
+audio::-webkit-media-controls-timeline {
+  filter: saturate(1.4);
+  margin: 0 6px;
+}
+
+/* Volume slider */
+audio::-webkit-media-controls-volume-slider {
+  filter: saturate(1.3);
+}
+
+/* Firefox (very limited) */
+audio {
+  accent-color: #f43f5e;
+}
