@@ -266,27 +266,26 @@ audio {
 
 
 /* ===== GALERIA DE FOTOS ===== */
-.fotos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-.fotos img {
-  width: 220px;
+
+.nossasfotos img {
+  width: 70%;
+  height: ato;
+  object-fit: cover;
+
   margin: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #nossasfotos {
-  max-width: 370px;
-  max-height: 500px;
+
+  width: 80%;
+  height: 90%;
 }
 
-#nossasfotos img {
-  max-height: 400px;
-}
+
+
 
 /* ===== AUDIO — ROMANTIC STYLE ===== */
 audio {
