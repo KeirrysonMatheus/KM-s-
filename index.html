@@ -5,167 +5,242 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KM's</title>
+
   <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body class="bgcolor">
+
   <div class="clickme">
     <button onclick="showPage()">Clique</button>
   </div>
-  <div class=" main-content">
-  <header>
-    <h1>KM's</h1>
-    <p id="desde">Desde 17 de janeiro de 2024</p>
-    <p id="contador"></p>
-  </header>
 
-  <nav>
-    <button onclick="showSection('historia')">Nossa História</button>
-    <button onclick="showSection('conhecemos')">Como Nos Conhecemos</button>
-    <button onclick="showSection('porqueamo')">Porque Eu Te Amo</button>
-    <button onclick="showSection('nossasfotos')">Nossas Fotos</button>
-    <button onclick="showSection('texto')">Texto</button>
-  </nav>
+  <div class="main-content">
 
-  <div id="instruction" class="active">
-    <p>Clique em algum dos tópicos acima!</p>
-  </div>
+    <header>
+      <h1>KM's</h1>
+      <p id="desde">Desde 17 de janeiro de 2024</p>
+      <p id="contador"></p>
+    </header>
 
-  <!-- PLAYER ESTILO SPOTIFY -->
-  <div class="spotify-player">
-    <img src="./img/music-img.webp"
-      alt="Capa da música">
-    <div class="player-info">
-      <p class="track">I Wanna Be Yours</p>
-      <p class="artist">Arctic Monkeys</p>
-      <audio controls id="music">
-        <source src="./audio/Arctic Monkeys - I Wanna Be Yours.mp3" type="audio/mp3">
-        Seu navegador não suporta áudio.
-      </audio>
-    </div>
-  </div>
+    <nav>
+      <button onclick="showSection('historia')">Nossa História</button>
+      <button onclick="showSection('conhecemos')">Como Nos Conhecemos</button>
+      <button onclick="showSection('porqueamo')">Porque Eu Te Amo</button>
+      <button onclick="showSection('nossasfotos')">Nossas Fotos</button>
+      <button onclick="showSection('texto')">Texto</button>
+    </nav>
 
-  <div id="historia" class="section">
-    <h2>Nossa História</h2>
-    <p> Meu amor, nossa história até aqui foi tão incrível! Mudamos tanto, emadurecemos tanto juntos, foram tantos momentos que já posso dizer que tu já faz parte de mim, como um marco que indica o antes e depois. Admiro tanto nós porque mesmo rodeados de casais infiéis, nós seguimos em frente sem se corromper! E além disso, eu acredito que a nossa história de amor inspira muitos dos que estão a nossa volta, como se as pessoas se espelhassem em nós e desejassem ter relacionamentos como o nosso, que incrível! Com apenas 2 anos já temos tanto o que contar, e creio que 2 anos não é 1% do que vamos viver juntos, porque eu desejo ter uma vida inteira do teu lado 💖 </p>
-  </div>
-
-  <div id="conhecemos" class="section">
-    <h2>Como Nos Conhecemos</h2>
-        <p>As mãos... <br>
-      Foi tão improvável. Era o dia que tu havia voltado a igreja, e no primeiro culto que foi, aquele momento inesquecível aconteceu. Tu podia ter sentado em qualquer lugar, eram tantos bancos, e ao invés de sentar junto da tua mãe, tu veio logo do meu lado, a partir daí tudo mudou. O que era pra ser apenas um ciúmes para a Manu, virou o início dos KM's! Quando o pregador pediu para pegar a mão do irmão do lado, no momento que peguei tua mão senti tanta coisa, uma sensação tão boa, leve, que não sei como explicar, mas apenas sabia que não era normal. Quando entrei no carro para ir embora, sai falando pra todo mundo que estava casado, mesmo sem saber teu nome e se tu havia sentido o mesmo, eu tinha acabado de me apaixonar profundamente por ti. Depois disso, comecei a pesquisar sobre ti em tudo que era lugar, até que descobri que tu estudava na mesmoa escola que eu, e eu não fazia ideia! Desde então, sempre que te via na escola, fazia qualquer coisa pra tentar chamar tua atenção, lembro até hoje de um dia que tu tava sentada naqueles lugares que ficam na frente das salas e do lado da escada, e eu estava de frescura com o Rodrigo, fiz aquilo só com um intuito: chamar a tua atenção e tentar ser notado por ti. Não sabia como fazer tu se apaixonar por mim e não fazia ideia do que passava na tua cabeça, só sabia que estava apaixonado. Depois de um tempo, mandei a primeira mensagem, na qual era uma pergunta boba só pra puxar assunto. Fiquei com vergonha e apaguei, mas graças a Deus tu viu e respondeu, e ai foi onde conversamos pela primeira vez! Foi mágico poder conversar contigo, me senti tão bem. <br> Depois de um tempo, decidi me declarar pra ti, mas como tu sabe, não rolou kkkk. Aquilo me fez desabar, porque a menina que eu tanto queria, parecia que não gostava de mim, então, decidi parar um pouco de falar contigo, que foi o momento que aquela pessoa entrou na minha vida, não foi falar sobre. Mas durante aquele relacionamento que estive com aquela pessoa, eu sabia sempre que te via, que eu não estava com a pessoa certa, faltava algo. Até que aquilo acabou, e então, comecei a falar contigo novamente, mas dessa vez, deu certo! Depois de tanta insistência, eu havia te conquistado! Fico tão feliz por não ter desistido de ti, porque senão, não estaríamos aqui hoje.
-    </p>
-  </div>
-
-  <div id="porqueamo" class="section">
-    <h2>Porque Eu Te Amo</h2>
-    <p>Meu amor, eu te amo tanto, mas tanto que não cabe no meu coração todo esse amor, cada atitude tua, cada palavra, cada sorriso, cada palavra me faz perceber o quanto tu é especial pra mim.
-    Eu te amo tanto, que já não me imagino sem ti no futuro, pra mim, não faz sentido ter uma vida espetacular sem ti do meu lado. Tu é a razão do meu sorriso diário, a pessoa que mais me faz feliz nesse mundo! E esses, e muitos outros motivos, me fazem cada dia ter a certeza que tu é o amor da minha vida ❤️
-    </p>
-  </div>
-  
- <div id="texto" class="section">
-<h2>Uma vez você escreveu um texto em meu PC para testar o teclado, e eu guardei este texto:</h2>
-
-
-    <p>
-eu amo minha namoradaaaaaaaaaaaaaaaaaaaaa eu vou casar com ela
-e ter 69 filhos 2 gatos 6 cachorros e 61 vacas e bois
-eu to sentindo no meu coracao de doas 8337473394058 milhoes
-de reais para ela e levar ela pra tomar acai e sorvete e 
-jogar minecraft com ela toda a madrugada eu amo ela nossaaaaaa
-casa cmg KEZIA MARIELLY SANTOS DOS SANTOSSSSSSSS vou dar
-uma coca de 2lt pra ela bem geladinha nosssaaaaaaaa que 
-namorada perfeita eu tenhoooooooooo ela e lindaaaaaa e 
-maravilhosa demaissssssss vou compra um hamster coelho urubu 
-    </p>
-  </div>
-  <div id="nossasfotos" class="section">
-    <h2>Nossas Fotos</h2>
-   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./img/foto1.png" class="d-block w-100" alt="Foto nossa 1">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/foto2.png" class="d-block w-100" alt="Foto nossa 2">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/foto3.png" class="d-block w-100" alt="Foto nossa 3">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/foto4.png" class="d-block w-100" alt="Foto nossa 4">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/foto5.png" class="d-block w-100" alt="Foto nossa 5">
-    </div>  
-    <div class="carousel-item">
-      <img src="./img/foto6.png" class="d-block w-100" alt="Foto nossa 6">
+    <div id="instruction" class="active">
+      <p>Clique em algum dos tópicos acima!</p>
     </div>
 
-     <div class="carousel-item">
-      <img src="./img/foto8.jpeg" class="d-block w-100" alt="Foto nossa 6">
+    <div style="text-align: center;" class="section active">
+      <h2>Feliz 2 Anos de Namoro!</h2>
+      <p>Oii, meu amor. Fiz esse site com muito carinho pra ti, espero que goste!</p>
     </div>
-     <div class="carousel-item">
-      <img src="./img/foto9.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto10.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto11.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto12.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto13.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto14.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto15.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto16.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto17.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto18.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto19.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto20.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-     <div class="carousel-item">
-      <img src="./img/foto21.jpeg" class="d-block w-100" alt="Foto nossa 6">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-  </div>
 
-  <div class="botoes-amor">
-    <button>KM's pra sempre ❤️</button>
-  </div>
+    <!-- ===== PLAYER 1 ===== -->
+    <div class="spotify-player active">
+      <img src="./img/music-img.webp" alt="Capa da música">
+      <div class="player-info">
+        <p class="track">I Wanna Be Yours</p>
+        <p class="artist">Arctic Monkeys</p>
+
+        <div class="custom-audio-player">
+          <button class="play-btn">▶</button>
+
+          <div class="progress-container">
+            <div class="progress"></div>
+          </div>
+
+          <audio class="audio">
+            <source src="./audio/Arctic Monkeys - I Wanna Be Yours.mp3" type="audio/mp3">
+            Seu navegador não suporta áudio.
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PLAYER 2 ===== -->
+    <div class="spotify-player">
+      <img src="./img/capa-stitches.jpeg" alt="Capa da música">
+      <div class="player-info">
+        <p class="track">Stitches</p>
+        <p class="artist">Shawn Mendes</p>
+
+        <div class="custom-audio-player">
+          <button class="play-btn">▶</button>
+
+          <div class="progress-container">
+            <div class="progress"></div>
+          </div>
+
+          <audio class="audio">
+            <source src="./audio/SpotiDown.App - Stitches - Shawn Mendes.mp3" type="audio/mp3">
+            Seu navegador não suporta áudio.
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PLAYER 3 ===== -->
+    <div class="spotify-player">
+      <img src="./img/capa-heather.jpeg" alt="Capa da música">
+      <div class="player-info">
+        <p class="track">Heather</p>
+        <p class="artist">Conan Gray</p>
+
+        <div class="custom-audio-player">
+          <button class="play-btn">▶</button>
+
+          <div class="progress-container">
+            <div class="progress"></div>
+          </div>
+
+          <audio class="audio">
+            <source src="./audio/Conan Gray - Heather.mp3" type="audio/mp3">
+            Seu navegador não suporta áudio.
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <div class="previous-btn">
+        <button id="previous"><img src="./img/button.png" alt=""></button>
+      </div>
+      <div class="next-btn">
+        <button id="next"><img src="./img/button.png" alt=""></button>
+      </div>
+    </div>
+
+    <!-- ===== SEÇÕES ===== -->
+
+    <div id="historia" class="section">
+      <h2>Nossa História</h2>
+      <p> Meu amor, nossa história até aqui foi tão incrível! Mudamos tanto, emadurecemos tanto juntos, foram tantos
+        momentos que já posso dizer que tu já faz parte de mim, como um marco que indica o antes e depois. Admiro tanto
+        nós porque mesmo rodeados de casais infiéis, nós seguimos em frente sem se corromper! E além disso, eu acredito
+        que a nossa história de amor inspira muitos dos que estão a nossa volta, como se as pessoas se espelhassem em
+        nós e desejassem ter relacionamentos como o nosso, que incrível! Com apenas 2 anos já temos tanto o que contar,
+        e creio que 2 anos não é 1% do que vamos viver juntos, porque eu desejo ter uma vida inteira do teu lado 💖 </p>
+    </div>
+
+    <div id="conhecemos" class="section">
+      <h2>Como Nos Conhecemos</h2>
+      <p>As mãos... <br> Foi tão improvável. Era o dia que tu havia voltado a igreja, e no primeiro culto que foi,
+        aquele momento inesquecível aconteceu. Tu podia ter sentado em qualquer lugar, eram tantos bancos, e ao invés de
+        sentar junto da tua mãe, tu veio logo do meu lado, a partir daí tudo mudou. O que era pra ser apenas um ciúmes
+        para a Manu, virou o início dos KM's! Quando o pregador pediu para pegar a mão do irmão do lado, no momento que
+        peguei tua mão senti tanta coisa, uma sensação tão boa, leve, que não sei como explicar, mas apenas sabia que
+        não era normal. Quando entrei no carro para ir embora, sai falando pra todo mundo que estava casado, mesmo sem
+        saber teu nome e se tu havia sentido o mesmo, eu tinha acabado de me apaixonar profundamente por ti. Depois
+        disso, comecei a pesquisar sobre ti em tudo que era lugar, até que descobri que tu estudava na mesmoa escola que
+        eu, e eu não fazia ideia! Desde então, sempre que te via na escola, fazia qualquer coisa pra tentar chamar tua
+        atenção, lembro até hoje de um dia que tu tava sentada naqueles lugares que ficam na frente das salas e do lado
+        da escada, e eu estava de frescura com o Rodrigo, fiz aquilo só com um intuito: chamar a tua atenção e tentar
+        ser notado por ti. Não sabia como fazer tu se apaixonar por mim e não fazia ideia do que passava na tua cabeça,
+        só sabia que estava apaixonado. Depois de um tempo, mandei a primeira mensagem, na qual era uma pergunta boba só
+        pra puxar assunto. Fiquei com vergonha e apaguei, mas graças a Deus tu viu e respondeu, e ai foi onde
+        conversamos pela primeira vez! Foi mágico poder conversar contigo, me senti tão bem. <br> Depois de um tempo,
+        decidi me declarar pra ti, mas como tu sabe, não rolou kkkk. Aquilo me fez desabar, porque a menina que eu tanto
+        queria, parecia que não gostava de mim, então, decidi parar um pouco de falar contigo, que foi o momento que
+        aquela pessoa entrou na minha vida, não foi falar sobre. Mas durante aquele relacionamento que estive com aquela
+        pessoa, eu sabia sempre que te via, que eu não estava com a pessoa certa, faltava algo. Até que aquilo acabou, e
+        então, comecei a falar contigo novamente, mas dessa vez, deu certo! Depois de tanta insistência, eu havia te
+        conquistado! Fico tão feliz por não ter desistido de ti, porque senão, não estaríamos aqui hoje. </p>
+    </div>
+
+    <div id="porqueamo" class="section">
+      <h2>Porque Eu Te Amo</h2>
+      <p>Meu amor, eu te amo tanto, mas tanto que não cabe no meu coração todo esse amor, cada atitude tua, cada
+        palavra, cada sorriso, cada palavra me faz perceber o quanto tu é especial pra mim. Eu te amo tanto, que já não
+        me imagino sem ti no futuro, pra mim, não faz sentido ter uma vida espetacular sem ti do meu lado. Tu é a razão
+        do meu sorriso diário, a pessoa que mais me faz feliz nesse mundo! E esses, e muitos outros motivos, me fazem
+        cada dia ter a certeza que tu é o amor da minha vida ❤️ </p>
+    </div>
+
+    <div id="texto" class="section">
+      <h2>Uma vez você escreveu um texto em meu PC para testar o teclado, e eu guardei este texto:</h2>
+      <p> eu amo minha namoradaaaaaaaaaaaaaaaaaaaaa eu vou casar com ela e ter 69 filhos 2 gatos 6 cachorros e 61 vacas
+        e bois eu to sentindo no meu coracao de doas 8337473394058 milhoes de reais para ela e levar ela pra tomar acai
+        e sorvete e jogar minecraft com ela toda a madrugada eu amo ela nossaaaaaa casa cmg KEZIA MARIELLY SANTOS DOS
+        SANTOSSSSSSSS vou dar uma coca de 2lt pra ela bem geladinha nosssaaaaaaaa que namorada perfeita eu
+        tenhoooooooooo ela e lindaaaaaa e maravilhosa demaissssssss vou compra um hamster coelho urubu </p>
+    </div>
+
+    <div id="nossasfotos" class="section">
+      <h2>Nossas Fotos</h2>
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <img src="./img/foto1.png" class="d-block w-100" alt="Foto nossa 1">
+          </div>
+
+          <div class="carousel-item">
+            <img src="./img/foto2.png" class="d-block w-100" alt="Foto nossa 2">
+          </div>
+
+          <div class="carousel-item">
+            <img src="./img/foto3.png" class="d-block w-100" alt="Foto nossa 3">
+          </div>
+
+          <!-- mantém o restante igual -->
+          <div class="carousel-item"><img src="./img/foto4.png" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto5.png" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto6.png" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto8.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto9.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto10.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto11.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto12.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto13.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto14.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto15.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto16.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto17.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto18.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto19.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto20.jpeg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./img/foto21.jpeg" class="d-block w-100"></div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="botoes-amor">
+      <button>KM's pra sempre ❤️</button>
+    </div>
+
+    <footer>
+      Feito por: Keirryson Matheus <br>
+      Para: Kézia Marielly
+    </footer>
+
   </div>
 
   <script src="js/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </body>
 

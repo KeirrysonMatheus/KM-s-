@@ -1,78 +1,166 @@
-  function createHeart() {
+/* =========================
+   CORAÇÕES CAINDO
+========================= */
+function createHeart() {
   const main = document.querySelector(".main-content");
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerHTML = "💖";
 
-  // posição horizontal aleatória dentro da main-content
-  heart.style.left = Math.random() * 85  + "%";
+  heart.style.left = Math.random() * 85 + "%";
+  heart.style.fontSize = Math.random() * 24 + 16 + "px";
 
-
-  // tamanho aleatório
-  heart.style.fontSize = (Math.random() * 24 + 16) + "px";
-
-  // duração da animação
   const duration = Math.random() * 3 + 3;
   heart.style.animationDuration = duration + "s";
 
   main.appendChild(heart);
-
-  // remover após a animação
   setTimeout(() => heart.remove(), duration * 1000);
 }
 
-// ativa os corações somente DEPOIS que a main-content aparecer
 function startHearts() {
   setInterval(createHeart, 300);
 }
-  
-  function showPage() {
-  const clickme = document.querySelector('.clickme');
-  const main = document.querySelector('.main-content');
 
-  clickme.classList.add('hide');
+/* =========================
+   MOSTRAR PÁGINA
+========================= */
+function showPage() {
+  const clickme = document.querySelector(".clickme");
+  const main = document.querySelector(".main-content");
+
+  clickme.classList.add("hide");
 
   setTimeout(() => {
     clickme.style.display = "none";
-    main.classList.add('show');
+    main.classList.add("show");
 
-    // iniciar corações só depois que a main aparecer
+    // iniciar corações
     startHearts();
 
-  }, 800);
+    // tocar automaticamente "I Wanna Be Yours"
+    musicID = 0;
+    playCurrentMusic();
 
-document.querySelector("#music").play();
+  }, 800);
 }
 
 
-    function showSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo({ top: 500, behavior: 'smooth' });
+/* =========================
+   SEÇÕES
+========================= */
+function showSection(id) {
+  document.querySelectorAll(".section").forEach(section =>
+    section.classList.remove("active")
+  );
+
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({ top: 500, behavior: "smooth" });
+}
+
+/* =========================
+   CONTADOR
+========================= */
+const dataInicio = new Date("2024-01-17T15:20:00");
+
+function atualizaContador() {
+  const agora = new Date();
+  const diferenca = agora - dataInicio;
+
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+
+  document.getElementById(
+    "contador"
+  ).textContent = `Juntos há ${dias} dias, ${horas} horas e ${minutos} minutos 💕`;
+}
+
+setInterval(atualizaContador, 1000);
+atualizaContador();
+
+/* =========================
+   PLAYER DE MÚSICA
+========================= */
+let musicID = 0;
+const players = document.querySelectorAll(".spotify-player");
+
+/* Função central */
+function playCurrentMusic() {
+  players.forEach(player => {
+    const audio = player.querySelector("audio");
+    const btn = player.querySelector(".play-btn");
+    const progress = player.querySelector(".progress");
+
+    audio.pause();
+    audio.currentTime = 0;
+    btn.textContent = "▶";
+    progress.style.width = "0%";
+    player.classList.remove("active");
+  });
+
+  const current = players[musicID];
+  const audio = current.querySelector("audio");
+  const btn = current.querySelector(".play-btn");
+
+  current.classList.add("active");
+  audio.play();
+  btn.textContent = "⏸";
+}
+
+/* Próxima / Anterior */
+function nextMusic() {
+  if (musicID < players.length - 1) {
+    musicID++;
+    playCurrentMusic();
+  }
+}
+
+function previousMusic() {
+  if (musicID > 0) {
+    musicID--;
+    playCurrentMusic();
+  }
+}
+
+document.getElementById("next").addEventListener("click", nextMusic);
+document.getElementById("previous").addEventListener("click", previousMusic);
+
+/* Player customizado */
+document.querySelectorAll(".custom-audio-player").forEach((player, index) => {
+  const audio = player.querySelector("audio");
+  const playBtn = player.querySelector(".play-btn");
+  const progressContainer = player.querySelector(".progress-container");
+  const progress = player.querySelector(".progress");
+
+  playBtn.addEventListener("click", () => {
+    if (musicID !== index) {
+      musicID = index;
+      playCurrentMusic();
+      return;
     }
 
-    const dataInicio = new Date('2024-01-17T15:20:00');
-
-    function atualizaContador() {
-      const agora = new Date();
-      const diferenca = agora - dataInicio;
-      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
-
-      document.getElementById('contador').textContent =
-        `Juntos há ${dias} dias, ${horas} horas e ${minutos} minutos 💕`;
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = "⏸";
+    } else {
+      audio.pause();
+      playBtn.textContent = "▶";
     }
+  });
 
-    setInterval(atualizaContador, 1000);
-    atualizaContador();
+  audio.addEventListener("timeupdate", () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + "%";
+  });
 
+  progressContainer.addEventListener("click", e => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    audio.currentTime = (clickX / width) * audio.duration;
+  });
 
-
-
-
-
-
-
-
+  audio.addEventListener("ended", () => {
+    playBtn.textContent = "▶";
+    progress.style.width = "0%";
+  });
+});

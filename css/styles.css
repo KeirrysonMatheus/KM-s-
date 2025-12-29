@@ -1,20 +1,16 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: "Inter", "Quicksand", sans-serif;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 0.3px;
   display: flex;
   flex-direction: column;
-  color: #fce7f3;
   align-items: center;
+  color: #fce7f3;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
-  
 }
 
 body.bgcolor {
@@ -68,10 +64,8 @@ body.bgcolor {
 /* ===== TITLES ===== */
 h2 {
   font-family: "Geom", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 600;
-  font-style: normal;
-  font-size: 3.0em;
+  font-size: 3em;
   color: #e879f9;
   margin-bottom: 12px;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
@@ -131,9 +125,52 @@ nav button:hover {
   box-shadow: 0 8px 25px rgba(244, 63, 94, 0.55);
 }
 
+/* ===== PLAYER NAVIGATION ===== */
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100dvw;
+}
+
+.previous-btn,
+.next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+
+.previous-btn button,
+.next-btn button {
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s;
+}
+
+.previous-btn button:hover,
+.next-btn button:hover {
+  opacity: 0.5;
+}
+
+.navigation img {
+  width: 50%;
+  height: 50%;
+}
+
+.previous-btn img {
+  transform: rotate(180deg);
+}
+
 /* ===== SPOTIFY PLAYER ===== */
 .spotify-player {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 12px;
   background: linear-gradient(135deg, #f43f5e, #e879f9);
@@ -145,15 +182,15 @@ nav button:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
+.spotify-player.active {
+  display: flex;
+}
+
 .spotify-player img {
   width: 75px;
   height: 75px;
   border-radius: 10px;
   border: 2px solid #fff;
-}
-
-.player-info {
-  width: 100%;
 }
 
 .track {
@@ -164,14 +201,6 @@ nav button:hover {
 .artist {
   font-size: 0.9em;
   color: #ffe4ef;
-}
-
-/* ===== AUDIO (RESPONSIVE FIX) ===== */
-audio {
-  width: 100%;
-  max-width: 100%;
-  height: 38px;
-  border-radius: 6px;
 }
 
 /* ===== SECTIONS ===== */
@@ -185,23 +214,30 @@ audio {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section.active {
   display: block;
 }
 
-.section:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 14px 40px rgba(232, 121, 249, 0.25);
-}
-
 .section p {
   font-size: 1.12em;
   line-height: 1.7;
-  color: #fce7f3;
   text-align: justify;
+}
+
+/* ===== GALERIA (ANTI-CRESCIMENTO) ===== */
+.nossasfotos img {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#nossasfotos {
+  width: 80%;
 }
 
 /* ===== LOVE BUTTON ===== */
@@ -238,11 +274,62 @@ audio {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
-
   to {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+/* ===== CUSTOM AUDIO PLAYER ===== */
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.custom-audio-player audio {
+  display: none;
+}
+
+.play-btn {
+  background: #fff;
+  color: #f43f5e;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+.progress-container {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(135deg, #f43f5e, #e879f9);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 1em;
+  color: #d1b6c8;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -264,89 +351,7 @@ audio {
     text-align: center;
   }
 
-  audio {
-    width: 100%;
-    min-width: 0;
-  }
-
   h2 {
     font-size: 2.2em;
   }
-}
-
-
-/* ===== GALERIA DE FOTOS ===== */
-
-
-.nossasfotos img {
-  width: 70%;
-  height: ato;
-  object-fit: cover;
-
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#nossasfotos {
-
-  width: 80%;
-  height: 90%;
-}
-
-
-
-
-/* ===== AUDIO — ROMANTIC STYLE ===== */
-audio {
-  padding: 20px;
-  width: 100%;
-  height: 50px;
-  border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    rgba(244, 63, 94, 0.35),
-    rgba(232, 121, 249, 0.35)
-  );
-  padding: 4px;
-  box-shadow:
-    0 4px 15px rgba(244, 63, 94, 0.35),
-    inset 0 0 10px rgba(255,255,255,0.15);
-}
-
-/* Chrome / Edge / Safari */
-audio::-webkit-media-controls-panel {
-  background: linear-gradient(
-    135deg,
-    rgba(244, 63, 94, 0.6),
-    rgba(232, 121, 249, 0.6)
-  );
-  border-radius: 10px;
-}
-
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button {
-  filter: brightness(1.2);
-}
-
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-  color: #fff;
-  font-weight: 600;
-}
-
-/* Progress bar */
-audio::-webkit-media-controls-timeline {
-  filter: saturate(1.4);
-  margin: 0 6px;
-}
-
-/* Volume slider */
-audio::-webkit-media-controls-volume-slider {
-  filter: saturate(1.3);
-}
-
-/* Firefox (very limited) */
-audio {
-  accent-color: #f43f5e;
 }
