@@ -169,10 +169,11 @@ nav button:hover {
 }
 
 /* ===== SPOTIFY PLAYER ===== */
-.spotify-player {
+
+  .spotify-player {
   display: none;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   background: linear-gradient(135deg, #f43f5e, #e879f9);
   border-radius: 16px;
   padding: 18px;
@@ -180,11 +181,21 @@ nav button:hover {
   max-width: 420px;
   width: 90%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+
 }
 
 .spotify-player.active {
   display: flex;
 }
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
 
 .spotify-player img {
   width: 75px;
@@ -285,14 +296,18 @@ nav button:hover {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 8px;
   width: 100%;
 }
+
 
 .custom-audio-player audio {
   display: none;
 }
 
-.play-btn {
+
+ .play-btn {
+  flex-shrink: 0;
   background: #fff;
   color: #f43f5e;
   border: none;
@@ -302,14 +317,14 @@ nav button:hover {
   font-size: 1.1em;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-  transition: transform 0.2s ease;
 }
 
 .play-btn:hover {
   transform: scale(1.1);
 }
 
-.progress-container {
+
+ .progress-container {
   flex: 1;
   height: 6px;
   background: rgba(255,255,255,0.4);
@@ -317,6 +332,7 @@ nav button:hover {
   cursor: pointer;
   overflow: hidden;
 }
+
 
 .progress {
   height: 100%;
