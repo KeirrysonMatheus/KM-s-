@@ -1,6 +1,20 @@
+
+if (localStorage.getItem("passwordCorrect") === "true") {
+  document.querySelector(".password").style.display = "none";
+} else {
+  localStorage.setItem("passwordCorrect", "false");
+}
+
+// everytime that i refresh the page the passwordCorrect key is set to false
+// this makes the password prompt appear again even if the user has already entered the correct password
+// To fix this, we need to check if the passwordCorrect key is already set to true before setting it to false on page load
+
+
+
 /* =========================
    CORAÇÕES CAINDO
 ========================= */
+
 function createHeart() {
   const main = document.querySelector(".main-content");
   const heart = document.createElement("div");
@@ -164,3 +178,16 @@ document.querySelectorAll(".custom-audio-player").forEach((player, index) => {
     progress.style.width = "0%";
   });
 });
+
+function checkPassword() {
+  const input = document.getElementById("password-input");
+  const password = input.value;
+  const div = document.querySelector(".password");
+  if (password === "kezieirryson") {
+    div.style.display = "none";
+    localStorage.setItem("passwordCorrect", "true");
+  } else {
+   document.getElementById("errorMessage").style.display = "block";
+  }
+}
+

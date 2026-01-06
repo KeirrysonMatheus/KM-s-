@@ -32,7 +32,7 @@ body.bgcolor {
 }
 
 /* ===== CLICKME ===== */
-.clickme {
+.clickme, .password {
   height: 100dvh;
   width: 100dvw;
   background-color: #1a0f1f;
@@ -41,7 +41,34 @@ body.bgcolor {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 100;
+}
+.password{
+  z-index: 200;
+}
+.password input {
+  padding: 12px 18px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  border: none;
+  margin-right: 12px;
+  outline: none;
+}
+.password button {
+  background: linear-gradient(135deg, #f43f5e, #e879f9);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.password button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(232, 121,
+  249, 0.65);
 }
 
 .clickme button {
