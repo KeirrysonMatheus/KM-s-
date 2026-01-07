@@ -32,7 +32,7 @@ function createHeart() {
 }
 
 function startHearts() {
-  setInterval(createHeart, 300);
+  setInterval(createHeart, 600);
 }
 
 /* =========================
