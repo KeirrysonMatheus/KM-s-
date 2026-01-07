@@ -8,10 +8,6 @@ if (localStorage.getItem("passwordCorrect") === "true") {
   localStorage.setItem("passwordCorrect", "false");
 }
 
-// everytime that i refresh the page the passwordCorrect key is set to false
-// this makes the password prompt appear again even if the user has already entered the correct password
-// To fix this, we need to check if the passwordCorrect key is already set to true before setting it to false on page load
-
 
 /* =========================
    VARIÁVEIS GLOBAIS
