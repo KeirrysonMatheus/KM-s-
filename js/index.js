@@ -1,3 +1,6 @@
+/* =========================
+   ESTADO INICIAL (PASSWORD)
+========================= */
 
 if (localStorage.getItem("passwordCorrect") === "true") {
   document.querySelector(".password").style.display = "none";
@@ -10,6 +13,14 @@ if (localStorage.getItem("passwordCorrect") === "true") {
 // To fix this, we need to check if the passwordCorrect key is already set to true before setting it to false on page load
 
 
+/* =========================
+   VARIÁVEIS GLOBAIS
+========================= */
+
+let musicID = 0;
+const players = document.querySelectorAll(".spotify-player");
+const dataInicio = new Date("2024-01-17T15:20:00");
+
 
 /* =========================
    CORAÇÕES CAINDO
@@ -18,6 +29,7 @@ if (localStorage.getItem("passwordCorrect") === "true") {
 function createHeart() {
   const main = document.querySelector(".main-content");
   const heart = document.createElement("div");
+
   heart.className = "heart";
   heart.innerHTML = "💖";
 
@@ -35,9 +47,11 @@ function startHearts() {
   setInterval(createHeart, 600);
 }
 
+
 /* =========================
    MOSTRAR PÁGINA
 ========================= */
+
 function showPage() {
   const clickme = document.querySelector(".clickme");
   const main = document.querySelector(".main-content");
@@ -54,7 +68,6 @@ function showPage() {
     // tocar automaticamente "I Wanna Be Yours"
     musicID = 0;
     playCurrentMusic();
-
   }, 800);
 }
 
@@ -62,6 +75,7 @@ function showPage() {
 /* =========================
    SEÇÕES
 ========================= */
+
 function showSection(id) {
   document.querySelectorAll(".section").forEach(section =>
     section.classList.remove("active")
@@ -71,10 +85,10 @@ function showSection(id) {
   window.scrollTo({ top: 500, behavior: "smooth" });
 }
 
+
 /* =========================
    CONTADOR
 ========================= */
-const dataInicio = new Date("2024-01-17T15:20:00");
 
 function atualizaContador() {
   const agora = new Date();
@@ -84,19 +98,17 @@ function atualizaContador() {
   const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
   const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
 
-  document.getElementById(
-    "contador"
-  ).textContent = `Juntos há ${dias} dias, ${horas} horas e ${minutos} minutos 💕`;
+  document.getElementById("contador").textContent =
+    `Juntos há ${dias} dias, ${horas} horas e ${minutos} minutos 💕`;
 }
 
 setInterval(atualizaContador, 1000);
 atualizaContador();
 
+
 /* =========================
    PLAYER DE MÚSICA
 ========================= */
-let musicID = 0;
-const players = document.querySelectorAll(".spotify-player");
 
 /* Função central */
 function playCurrentMusic() {
@@ -136,10 +148,14 @@ function previousMusic() {
   }
 }
 
+
+/* =========================
+   EVENTOS DO PLAYER
+========================= */
+
 document.getElementById("next").addEventListener("click", nextMusic);
 document.getElementById("previous").addEventListener("click", previousMusic);
 
-/* Player customizado */
 document.querySelectorAll(".custom-audio-player").forEach((player, index) => {
   const audio = player.querySelector("audio");
   const playBtn = player.querySelector(".play-btn");
@@ -179,15 +195,20 @@ document.querySelectorAll(".custom-audio-player").forEach((player, index) => {
   });
 });
 
+
+/* =========================
+   PASSWORD
+========================= */
+
 function checkPassword() {
   const input = document.getElementById("password-input");
   const password = input.value;
   const div = document.querySelector(".password");
+
   if (password === "kezieirryson") {
     div.style.display = "none";
     localStorage.setItem("passwordCorrect", "true");
   } else {
-   document.getElementById("errorMessage").style.display = "block";
+    document.getElementById("errorMessage").style.display = "block";
   }
 }
-
