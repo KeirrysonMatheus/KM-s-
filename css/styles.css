@@ -122,6 +122,7 @@ header h1 {
 #contador {
   margin-top: 10px;
   color: #f43f5e;
+  font-weight: 600;
 }
 
 /* ===== NAV ===== */
