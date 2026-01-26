@@ -8,10 +8,19 @@ if (localStorage.getItem("passwordCorrect") === "true") {
   localStorage.setItem("passwordCorrect", "false");
 }
 
+/* ============================================
+   QUANTIDADE DE VEZES QUE A PÁGINA FOI ABERTA
+=============================================== */
+
+localStorage.setItem("pageOpens", localStorage.getItem("pageOpens") ? parseInt(localStorage.getItem("pageOpens")) + 1 : 1); 
+console.log(`Esta página foi aberta ${localStorage.getItem("pageOpens")} vezes.`);
+document.getElementsByTagName("footer")[0].innerHTML += "<br>" + localStorage.getItem("pageOpens");
+
 
 /* =========================
    VARIÁVEIS GLOBAIS
 ========================= */
+
 
 let musicID = 0;
 const players = document.querySelectorAll(".spotify-player");
